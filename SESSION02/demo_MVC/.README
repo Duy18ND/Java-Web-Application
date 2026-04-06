@@ -1,0 +1,18 @@
+- implementation("org.springframework:spring-webmvc:7.0.6") ➔ Tác dụng: Cung cấp lõi kiến trúc Spring MVC (bao gồm DispatcherServlet
+và các Annotation như @Controller, @GetMapping). Giúp quản lý vòng đời Request/Response và điều hướng dữ liệu thay cho Servlet truyền thống.
+
+-implementation("jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.1.1") -> Tác dụng: Cung cấp đặc tả API chuẩn của
+Jakarta EE để Servlet Container (như Apache Tomcat) có thể đọc, biên dịch và vận hành các file giao diện động .jsp.
+
+-implementation("jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.2") ➔ Tác dụng: Cung cấp bộ thư viện thẻ chuẩn JSTL
+(ví dụ: <c:if>, <c:forEach>) nhằm thay thế mã Java Scriptlet (<% %>), giúp nhúng logic điều khiển vào View một cách an toàn và chuẩn hóa cấu trúc.
+
+
+Cấu trúc thư mục
+
+📂 src/main/java/org.example.demo_mvc
+┣ 📂 controller    <-- Presentation Layer: Tiếp nhận HTTP Request, định tuyến gọi Service và trả về View.
+┣ 📂 service       <-- Business Logic Layer: Xử lý logic nghiệp vụ cốt lõi, tính toán và kiểm tra dữ liệu.
+┣ 📂 repository    <-- Data Access Layer (DAO): Tương tác trực tiếp với Database để thực thi các lệnh CRUD.
+┣ 📂 model         <-- Entity / DTO: Đối tượng chứa dữ liệu để ánh xạ bảng Database và trung chuyển giữa các tầng.
+┗ 📂 configuration <-- Application Context Setup: Chứa các lớp @Configuration để cài đặt môi trường Spring và Bean.
