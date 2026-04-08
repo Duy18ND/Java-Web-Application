@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="285cf1ca-27db-476d-804c-740aa7b491de" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../SESSION03/LuyenTap/luyentap/src/main/java/com/re/luyentap/Service/CourseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SESSION03/LuyenTap/luyentap/src/main/java/com/re/luyentap/configuaration/DispatcherServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SESSION03/LuyenTap/luyentap/src/main/java/com/re/luyentap/configuaration/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SESSION03/LuyenTap/luyentap/src/main/java/com/re/luyentap/controller/new_way/CourseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SESSION03/LuyenTap/luyentap/src/main/java/com/re/luyentap/controller/old_way/CourseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SESSION03/LuyenTap/luyentap/src/main/java/com/re/luyentap/model/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SESSION03/LuyenTap/luyentap/src/main/java/com/re/luyentap/repository/CourseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SESSION03/LuyenTap/luyentap/src/main/webapp/WEB-INF/view/course.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SESSION03/LuyenTap/luyentap/src/main/webapp/WEB-INF/view/list-product.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SESSION03/LuyenTap/luyentap/src/main/webapp/WEB-INF/view/result.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/re/demo/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/re/demo/config/WebInit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/re/demo/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/re/demo/dao/StudentDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/re/demo/model/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/re/demo/service/StudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/webapp/WEB-INF/view/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SESSION01/src" beforeDir="false" afterPath="$PROJECT_DIR$/../SESSION01/src" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="3C4JVF0nr7zIiJJ0FVGHAophnC3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/BAITAP/Java Web Application/SESSION04",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.31033.145" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="285cf1ca-27db-476d-804c-740aa7b491de" name="Changes" comment="" />
+      <created>1775638931165</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1775638931165</updated>
+      <workItem from="1775638932463" duration="60000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
