@@ -1,0 +1,81 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Home page</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Xin chào (Hello World!)</h1>-->
+<!--&lt;!&ndash;th:text tương đương c:out&ndash;&gt;-->
+<!--&lt;!&ndash;th:each tương đương c:forEach&ndash;&gt;-->
+<!--&lt;!&ndash;th:if tương đương c:if&ndash;&gt;-->
+<!--&lt;!&ndash;th:unless&ndash;&gt;-->
+<!--<table border="1" cellpadding="10" cellspacing="10">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th>ID</th>-->
+<!--        <th>Name</th>-->
+<!--        <th>Price</th>-->
+<!--        <th>Stock</th>-->
+<!--        <th>Status</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+
+<!--    <tbody>-->
+<!--&lt;!&ndash;    shop là chỗ  model.addAttribute("shop", products);&ndash;&gt;-->
+<!--    <tr th:each="p: ${shop}">-->
+<!--        <td th:text="${p.id}"></td>-->
+<!--        <td th:text="${p.name}"></td>-->
+<!--        <td th:text="${p.price}"></td>-->
+<!--        <td th:text="${p.stock}"></td>-->
+<!--        <td th:text="${p.status ? 'Còn bán' : 'Hết hàng'}"></td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--</table>-->
+<!--</body>-->
+<!--</html>-->
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<!--    Tiêm  cách html khác vào th:replace="foder/file.html::Tên đặt fragment của file layout"-->
+<div th:replace="/layout/layoutWeb :: header('Trang Chủ', 'home')"></div>
+<table class="table table-striped">
+    <thead class="thead-inverse">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--    th:object là phân rã khi get ra -> *{id}-->
+    <!-- thay vì ${p.name} thì sử dụng *{name}-->
+    <tr th:each="p: ${shop}" th:object="${p}">
+        <td th:text="*{id}"></td>
+        <td th:text="*{name}"></td>
+        <td th:text="*{price}"></td>
+        <td th:text="*{stock}"></td>
+        <td th:text="*{status} ? 'Còn bán' : 'Hết hàng'"></td>
+        <td>
+            <!--@ Tạo đường dẫn-->
+            <a class="btn btn-danger btn-sm" th:href="@{/delete/{id}(id=*{id})}">Xóa</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div th:replace="/layout/layoutWeb::nav"></div>
+</body>
+</html>

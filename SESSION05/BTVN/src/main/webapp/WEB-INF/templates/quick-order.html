@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đặt Món Nhanh</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px; }
+    .order-card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 600px; margin: auto; }
+    h2 { color: #2c3e50; text-align: center; margin-bottom: 20px; }
+    h2 i { color: #e74c3c; margin-right: 10px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 25px; }
+    th, td { border-bottom: 1px solid #eee; padding: 12px; text-align: left; }
+    th { background-color: #f8f9fa; color: #34495e; font-weight: 600; }
+    th i { color: #3498db; margin-right: 8px; width: 16px; text-align: center; }
+    .totals { text-align: right; font-size: 16px; line-height: 2; color: #555; }
+    .totals i { margin-right: 8px; color: #95a5a6; }
+    .grand-total { font-size: 22px; font-weight: bold; color: #e74c3c; margin-top: 15px; }
+    .grand-total i { color: #27ae60; }
+    hr { border: 0; border-top: 1px dashed #ccc; margin: 15px 0; }
+  </style>
+</head>
+<body>
+
+<div class="order-card">
+  <h2><i class="fas fa-receipt"></i>Hóa Đơn Đặt Món Nhanh</h2>
+
+  <table>
+    <thead>
+    <tr>
+      <th><i class="fas fa-utensils"></i>Tên Món</th>
+      <th><i class="fas fa-tag"></i>Đơn Giá</th>
+      <th><i class="fas fa-hashtag"></i>Số Lượng</th>
+      <th><i class="fas fa-coins"></i>Thành Tiền</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${summary.items}">
+      <td th:text="${item.name}">Gà rán</td>
+      <td th:text="${#numbers.formatDecimal(item.price, 0, 'COMMA', 0, 'POINT')}">35,000</td>
+      <td th:text="${item.quantity}">2</td>
+      <td th:text="${#numbers.formatDecimal(item.itemTotal, 0, 'COMMA', 0, 'POINT')}">70,000</td>
+    </tr>
+    <tr th:remove="all">
+      <td>Khoai tây chiên</td>
+      <td>20,000</td>
+      <td>1</td>
+      <td>20,000</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="totals">
+    <p><i class="fas fa-calculator"></i>Tổng cộng: <span th:text="${#numbers.formatDecimal(summary.subTotal, 0, 'COMMA', 0, 'POINT')}">90,000</span> VNĐ</p>
+    <p><i class="fas fa-file-invoice-dollar"></i>Thuế VAT (10%): <span th:text="${#numbers.formatDecimal(summary.vatTax, 0, 'COMMA', 0, 'POINT')}">9,000</span> VNĐ</p>
+    <hr>
+    <p class="grand-total"><i class="fas fa-money-bill-wave"></i>Thanh Toán: <span th:text="${#numbers.formatDecimal(summary.grandTotal, 0, 'COMMA', 0, 'POINT')}">99,000</span> VNĐ</p>
+  </div>
+</div>
+
+</body>
+</html>
