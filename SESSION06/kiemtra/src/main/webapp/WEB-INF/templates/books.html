@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách Book</title>
+</head>
+<body>
+<div th:replace="~{layout/layoutPage :: header}"></div>
+
+<h2>Danh sách Truyện Tranh</h2>
+
+<table border="1" cellpadding="10" cellspacing="0">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Tên Sách</th>
+        <th>Tác giả</th>
+        <th>Giá bán</th>
+        <th>Hành động</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="b : ${book}" th:object="${b}">
+        <td th:text="*{id}"></td>
+        <td th:text="*{nameBook}"></td>
+        <td th:text="*{author}"></td>
+        <td th:text="*{price}"></td>
+        <td>
+            <a th:href="@{/book/{id}(id=*{id})}">Xem chi tiết</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<br>
+
+<div th:replace="~{layout/layoutPage :: footer}"></div>
+</body>
+</html>
