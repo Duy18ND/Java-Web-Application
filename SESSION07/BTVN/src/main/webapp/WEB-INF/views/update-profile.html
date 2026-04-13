@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Page</title>
+</head>
+<body>
+<!--Ở Thẻ input cũ khai báo thuộc tính name = "restaurantName"-->
+<!--
+Nhưng ở trong RestaurantProfile khai báo private String name
+Luồng Data Binding chạy sang class và không tìm thấy rastaurantName nên kết quả mặc định của name = null
+
+Tại sao Checkbox active (boolean) lại không hoạt động?
+    Vì value đang set cứng value = "MỞ CỬA"
+    Biến active mang kiểu dữ liệu boolen nên -> khi nhập text ném lỗi và gán active = false
+-->
+<form th:action="@{/update-profile}"
+      th:object="${profile}"
+      method="post">
+
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control"
+               th:field="*{name}"
+               placeholder="Enter name">
+    </div>
+
+    <div class="form-group">
+        <label>Phone</label>
+        <input type="text" class="form-control"
+               th:field="*{phone}"
+               placeholder="Enter phone">
+    </div>
+
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input"
+                   th:field="*{active}">
+            Active
+        </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>

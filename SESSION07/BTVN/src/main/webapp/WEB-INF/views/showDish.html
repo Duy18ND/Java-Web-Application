@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Chi tiết món ăn</title>
+</head>
+<body>
+<h2 th:if="${message}" th:text="${message}" style="color: green;"></h2>
+
+<div th:if="${dishSuccess}">
+  <h3>Thông tin món bạn vừa thêm:</h3>
+  <ul>
+    <li><strong>Tên món:</strong> <span th:text="${dishSuccess.name}"></span></li>
+    <li><strong>Thuộc nhóm:</strong> <span th:text="${dishSuccess.category}"></span></li>
+  </ul>
+</div>
+
+<br>
+<a th:href="@{/dish}">Quay lại form thêm món</a>
+</body>
+</html>

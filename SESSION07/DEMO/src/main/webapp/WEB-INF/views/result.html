@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Result Page</title>
+</head>
+<body>
+
+<!-- Hiển thị lỗi -->
+<p th:if="${error}" th:text="${error}"></p>
+
+<!-- Hiển thị thành công -->
+<p th:if="${message}" th:text="${message}"></p>
+
+<!-- Hiển thị ảnh -->
+<img th:if="${fileName}" th:src="@{'/image/' + ${fileName}}" width="200">
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<form th:action="@{/merchant/combo/add}" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Tên Siêu Combo:</label>
+        <input type="text" name="name" required>
+    </div>
+
+    <div class="form-group">
+        <label>Chọn các món ăn (Ít nhất 2 món):</label><br>
+        <input type="checkbox" name="itemList" value="Gà Rán"> Gà Rán <br>
+        <input type="checkbox" name="itemList" value="Khoai Tây Chiên"> Khoai Tây Chiên <br>
+        <input type="checkbox" name="itemList" value="Hamburger"> Hamburger <br>
+        <input type="checkbox" name="itemList" value="Coca Cola"> Coca Cola <br>
+    </div>
+
+    <div class="form-group">
+        <label>Banner quảng cáo (Tối đa 10MB):</label>
+        <input type="file" name="banner" accept="image/*" required>
+    </div>
+
+    <button type="submit">Tạo Combo</button>
+</form>

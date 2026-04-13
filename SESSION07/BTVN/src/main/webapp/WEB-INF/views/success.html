@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thành công</title>
+</head>
+<body>
+<h2 th:if="${message}" th:text="${message}"></h2>
+
+<div th:if="${profileSuccess}">
+    <h3>Thông tin quán:</h3>
+    <p><strong>Tên:</strong> <span th:text="${profileSuccess.name}"></span></p>
+    <p><strong>Phone:</strong> <span th:text="${profileSuccess.phone}"></span></p>
+    <p><strong>Trạng thái:</strong> <span th:text="${profileSuccess.active ? 'Đang hoạt động' : 'Tạm nghỉ'}"></span></p>
+</div>
+
+<br>
+<a th:href="@{/update-profile}">Quay lại Form</a>
+</body>
+</html>

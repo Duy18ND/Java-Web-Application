@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm món ăn mới</title>
+</head>
+<body>
+<h2>Thêm Món Ăn Vào Menu</h2>
+
+<form th:action="@{/dish/save}" th:object="${newDish}" method="post">
+
+    <div>
+        <label>Tên món ăn:</label>
+        <input type="text" th:field="*{name}" required>
+    </div>
+    <br>
+
+    <div>
+        <label>Nhóm món ăn:</label>
+        <select th:field="*{category}">
+            <option value="">-- Chọn nhóm món --</option>
+            <option th:each="cat : ${categories}"
+                    th:value="${cat}"
+                    th:text="${cat}"></option>
+        </select>
+    </div>
+    <br>
+
+    <button type="submit">Lưu món ăn</button>
+</form>
+</body>
+</html>
