@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Validate Tuổi</title>
+</head>
+<body>
+<h2>Form Test Độ Tuổi HR</h2>
+
+<form th:action="@{/}" th:object="${employee}" method="post">
+
+    <label>Nhập tuổi (18-60):</label>
+    <input type="text" th:field="*{age}" placeholder="Nhập thử số 16 xem...">
+
+    <p style="color: red; font-weight: bold;"
+       th:if="${#fields.hasErrors('age')}"
+       th:errors="*{age}"></p>
+
+    <br>
+    <button type="submit">Test Thử!</button>
+</form>
+</body>
+</html>

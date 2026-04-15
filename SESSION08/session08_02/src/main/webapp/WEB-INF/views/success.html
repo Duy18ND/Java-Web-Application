@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm mới thành công!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+
+            <div class="alert alert-success shadow-sm" role="alert">
+                <h2 class="alert-heading fw-bold mb-3">🎉 Thành công!</h2>
+                <p class="mb-0">Đã thêm nhân viên mới vào hệ thống an toàn.</p>
+                <hr>
+                <a th:href="@{/}" class="btn btn-success mt-2">
+                    &larr; Thêm nhân viên khác
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Person List</title>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<table class="table" border="1" cellspacing="5" cellpadding="5">
+    <a th:href="@{/view-add}" class="btn btn-success mb-3">Thêm bạn mới</a>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Birth Day</th>
+        <th>Age</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="p : ${person}" th:object="${p}">
+        <td scope="row" th:text="*{id}"></td>
+        <td th:text="*{name}"></td>
+        <td th:text="*{gender}"></td>
+
+        <td th:text="${#temporals.format(p.dateOfBirth, 'dd/MM/yyyy')}"></td>
+
+        <td th:text="*{age}"></td>
+        <td th:text="*{email}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

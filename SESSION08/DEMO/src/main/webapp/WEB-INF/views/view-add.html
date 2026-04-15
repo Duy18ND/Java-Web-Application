@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Add Page</title>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<form th:action="@{/view-add}" th:object="${personDTO}" method="post">
+
+    <div class="form-group" style="display: none;">
+        <input type="hidden" th:field="*{id}">
+        <p class="error" th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></p>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Họ và Tên</label>
+        <input type="text" class="form-control" th:field="*{name}" placeholder="Nhập họ và tên...">
+        <small class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Giới tính</label>
+        <select class="form-control" th:field="*{gender}">
+            <option value="">-- Chọn giới tính --</option>
+            <option value="MALE">Nam</option>
+            <option value="FEMALE">Nữ</option>
+            <option value="OTHER">Khác</option>
+        </select>
+        <small class="error" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></small>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Ngày sinh</label>
+        <input type="date" class="form-control" th:field="*{dateOfBirth}">
+        <small class="error" th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}"></small>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Tuổi</label>
+        <input type="number" class="form-control" th:field="*{age}" placeholder="Nhập tuổi..." min="0">
+        <small class="error" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></small>
+    </div>
+
+    <div class="form-group mb-4">
+        <label>Email liên hệ</label>
+        <input type="text" class="form-control" th:field="*{email}" placeholder="example@gmail.com">
+
+        <small class="error"
+               th:if="${#fields.hasErrors('email')}"
+               th:text="${#fields.errors('email')[0]}">
+        </small>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Lưu thông tin</button>
+    <button type="reset" class="btn btn-secondary">Nhập lại</button>
+
+</form>
+</body>
+</html>
